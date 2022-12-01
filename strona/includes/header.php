@@ -1,13 +1,14 @@
 <div class="header">
-    <h3>Strona z filmami!</h3>
-    <a href="./sites/movie-search.php">Szuakj filmu!</a>
+    <a href="/strona/index.php" style="text-decoration: none; color: white;"><h3>Strona z filmami!</h3></a>
+    <a class='headerLink' href="/strona/sites/movie-search.php">Szuakj filmu!</a>
     <?php
-    if(isset($_COOKIE["id"])){
-        echo "<p>Zalogowano jako: ".$_row["login"]."</p>";
-        echo "<a href='./sites/logout.php'>Wyloguj!</a>";
+    if(isset($_SESSION["id"])){
+        echo "<p>Zalogowano jako: ".$_SESSION["id"]."</p>";
+        echo "<a class='headerLink' href='/strona/sites/logout.php'>Wyloguj!</a>";
     }
     else{
-        echo "<a href='./sites/login.php'>Zaloguj sie!</a>";
+        echo "<a class='headerLink' href='/strona/sites/login.php'>Zaloguj sie!</a>";
+        echo "<a class='headerLink' href='/strona/sites/register.php'>Zarejestruj sie!</a>";
     }
     ?>
 </div>

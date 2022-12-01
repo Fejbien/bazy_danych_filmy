@@ -3,48 +3,173 @@
 }
 
 body{
-    display: flex;
-    min-height: 100%;
-    flex-grow: 1;
-    flex-direction: column;
-    background-color: darkmagenta;
-    color: white;
     margin: 0px;
+    color: white;
+}
+
+.wrapp{
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(68,64,111,1) 0%, rgba(33,30,66,1) 100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: row;
+    align-content: center;
     align-items: center;
+    justify-content: space-evenly;  
+    font-size: larger;  
+    padding: 10px;
     border-bottom: 1px solid white;
 }
 
-.header > a{
+.headerLink{
     text-decoration: none;
+    color: white;
+    padding: 17px;
     border: 2px dashed aqua;
     border-radius: 25px;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
 }
 
-.header > a:hover{
-    border: 2px dashed gold;
+.headerLink:hover{
     color: red;
-}
-
-.nav{
-
-}
-
-.footer{
-    justify-self: end;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    border-top: 1px solid white;
+    border: 2px dashed red;
 }
 
 .main{
+    height: 100%;
+    width: 100%;
+}
 
+.nav{
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    float: left;
+    border-right: 1px solid white;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.nav > a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 10px;
+}
+
+.nav > ul > li{
+    list-style-type: none;
+}
+
+.nav > ul > li::before{
+    content: "➜ ";
+}
+
+.nav > ul > li > a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.aside{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.footer{
+    position:relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    bottom: 0px;
+    justify-self: flex-end;
+    border-top: 1px solid white;
+}
+
+.footer > a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer > a:hover{
+    color: red;
+}
+
+.form{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.form > p {
+    margin: 10px;
+}
+
+.form > input[type='text'], input[type='password']{
+    height: 60px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.form > input[type='submit']{
+    height: 60px;
+    width: 200px;
+    background-color: rgba(33,30,66,1);
+    border: 2px solid white;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.cardLink{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    width: 240px;
+    height: 100px;
+}
+
+.cardLink:hover{
+    color: red;
+    border: 2px solid red;
+}
+
+.cardLink > p{
+    margin: 5px;
 }
