@@ -44,7 +44,7 @@
                 </div>
                 <div style="display: flex; flex-direction: column; text-align: center; margin-top: 30px; font-size: 16px;">
                     <p style="margin-bottom: 2px;">Konto admina?</p>
-                    <a class='headerLink' style='padding: 8px' href='/strona/sites/register.php'>Zaloguj jako admin</a>
+                    <a class='headerLink' style='padding: 8px' href='/strona/admin/login.php'>Zaloguj jako admin</a>
                 </div>
             </div>
         </div>

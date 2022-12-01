@@ -12,6 +12,14 @@
         echo "<li><a href='/strona/sites/movie-add.php'>Dodaj film</a></li>";
         echo "</ul>";
         echo "<hr>";
+        if($_SESSION["isAdmin"])
+        {
+            echo "<ul>";
+            echo "<li><a href='/strona/admin/movie-list.php'>Lista wszystkich filmow</a></li>";
+            echo "<li><a href='/strona/admin/add-admin.php'>Nadaj admina</a></li>";
+            echo "</ul>";
+            echo "<hr>";
+        }
     }
     else{
         echo "<div style='text-align: center; display: flex; flex-direction: column'>";
