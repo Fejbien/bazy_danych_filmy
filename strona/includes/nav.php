@@ -7,7 +7,11 @@
     <hr>
     <?php
     if(isset($_SESSION["id"])){
-
+        echo "<ul>";
+        echo "<li><a href='/strona/sites/movie-my.php'>Moje filmy</a></li>";
+        echo "<li><a href='/strona/sites/movie-add.php'>Dodaj film</a></li>";
+        echo "</ul>";
+        echo "<hr>";
     }
     else{
         echo "<div style='text-align: center; display: flex; flex-direction: column'>";

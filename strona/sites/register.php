@@ -22,7 +22,7 @@
         </div>
 
         <div class="main" style="justify-content: flex-start; flex-direction: column">
-            <div class="aside" style="justify-content: flex-start; flex-direction: column; align-items: center;">
+            <div class="aside" style="justify-content: flex-start; flex-direction: column; align-items: center;  align-content: center;">
                 <form class="form" method="POST">
                     <p>Login</p>
                     <input type="text" name="loginRegistration">
