@@ -50,11 +50,11 @@ CREATE TABLE IF NOT EXISTS `movies`.`movies` (
   `genere_id` INT NOT NULL,
   `avaiable` TINYINT NULL,
   `user_id` INT NOT NULL,
-  `users_id` INT NULL,
+  `admin_id` INT NULL,
   PRIMARY KEY (`id`, `genere_id`, `user_id`),
-  INDEX `fk_movies_users_idx` (`user_id` ASC),
+  INDEX `fk_movies_admin_idx` (`user_id` ASC),
   INDEX `fk_movies_generes1_idx` (`genere_id` ASC),
-  INDEX `fk_movies_users1_idx` (`users_id` ASC),
+  INDEX `fk_movies_users1_idx` (`admin_id` ASC),
   CONSTRAINT `fk_movies_users`
     FOREIGN KEY (`user_id`)
     REFERENCES `movies`.`users` (`id`)
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `movies`.`movies` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_movies_users1`
-    FOREIGN KEY (`users_id`)
+    FOREIGN KEY (`admin_id`)
     REFERENCES `movies`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
