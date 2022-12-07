@@ -5,6 +5,8 @@
 body{
     margin: 0px;
     color: white;
+    overflow-x: hidden;
+    background-color: rgba(68,64,111,1);
 }
 
 .wrapp{

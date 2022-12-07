@@ -16,7 +16,7 @@
                 <h1>Dostępne filmy</h1>
                 <?php
                     $con = new mysqli("localhost", "root", "", "movies");
-                    $sql = "SELECT `id`, `name`, `year` FROM `movies` WHERE `avaiable` = 1;";
+                    $sql = "SELECT `id`, `name`, `year` FROM `movies` WHERE `avaiable` = 1 and `admin_id` is not null;";
                     $res = $con->query($sql);
                     while($row = $res->fetch_assoc()){
                         echo "

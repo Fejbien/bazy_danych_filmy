@@ -13,7 +13,8 @@
         <div class="main">
             <?php include $_SERVER['DOCUMENT_ROOT'].'/strona/includes/nav.php'; ?>
             <div class="aside">
-                
+                <h1>Filmy!</h1>
+                <p>Naprawde ma filmy ta strona</p>
             </div>
         </div>
 
