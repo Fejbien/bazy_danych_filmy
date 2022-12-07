@@ -6,7 +6,7 @@
     if((isset($_POST["title"]) && isset($_POST["year"]) && isset($_POST["length"]) && isset($_POST["genere"]))
     && (!empty($_POST["title"]) && !empty($_POST["year"]) && !empty($_POST["length"]) && !empty($_POST["genere"]))){
         $con = new mysqli("localhost", "root", "", "movies");
-        $sql = "INSERT INTO `movies` (`id`, `name`, `year`, `length`, `genere_id`, `avaiable`, `user_id`, `admin_id`) VALUES (NULL, '".$_POST["title"]."', '".$_POST["year"]."', '".$_POST["length"]."', '".$_POST["genere"]."', '1', '".$_SESSION["id"]."', NULL);";
+        $sql = "INSERT INTO `movies` (`id`, `name`, `year`, `length`, `genere_id`,`user_id`, `admin_id`, `renter_id`) VALUES (NULL, '".$_POST["title"]."', '".$_POST["year"]."', '".$_POST["length"]."', '".$_POST["genere"]."', '".$_SESSION["id"]."', NULL, NULL);";
         $con->query($sql);
         header("Location: ". "/strona/sites/movie-my.php");
     }

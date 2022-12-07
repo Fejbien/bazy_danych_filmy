@@ -30,10 +30,10 @@ if(!$_SESSION["isAdmin"]){
                         $con->query($sql);
                     }
 
-                    $sql = "SELECT m.id, m.name, m.year, m.length, g.genere, m.avaiable, u.login, a.login as 'admin', m.user_id as 'id' FROM movies as m JOIN generes as g ON g.id = m.genere_id JOIN users as u ON u.id = m.user_id LEFT JOIN users as a ON a.id = m.admin_id WHERE m.id = '".$_GET["movieId"]."';";
+                    $sql = "SELECT m.id, m.name, m.year, m.length, g.genere, m.renter_id, u.login, a.login as 'admin', m.user_id as 'id' FROM movies as m JOIN generes as g ON g.id = m.genere_id JOIN users as u ON u.id = m.user_id LEFT JOIN users as a ON a.id = m.admin_id WHERE m.id = '".$_GET["movieId"]."';";
                     $res = $con->query($sql);
                     while($row = $res->fetch_assoc()){
-                        if($row["avaiable"] != 1)
+                        if($row["renter_id"] != NULL)
                             echo "<h1>Film aktualnie wypożyczony</h1>";
 
                         if($row["admin"] != NULL) 
