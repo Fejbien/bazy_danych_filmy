@@ -15,8 +15,7 @@
         if($_SESSION["isAdmin"])
         {
             echo "<ul>";
-            echo "<li><a href='/strona/admin/movie-list.php'>Lista wszystkich filmow</a></li>";
-            echo "<li><a href='/strona/admin/movie-list-not-accepted.php'>Filmy nie zaakceptowane</a></li>";
+            echo "<li><a href='/strona/admin/movie-list.php'>Wszystkie filmy</a></li>";
             echo "<li><a href='/strona/admin/add-admin.php'>Nadaj admina</a></li>";
             echo "</ul>";
             echo "<hr>";

@@ -18,7 +18,7 @@ if(!$_SESSION["isAdmin"]){
         <div class="main">
             <?php include $_SERVER['DOCUMENT_ROOT'].'/strona/includes/nav.php'; ?>
             <div class="aside">
-                <h1>Filmy</h1>
+                <h1>Wszystkie filmy</h1>
                 <?php
                     $con = new mysqli("localhost", "root", "", "movies");
                     $sql = "SELECT `id`, `name`, `year`, `admin_id` FROM `movies` WHERE 1;";
@@ -29,6 +29,25 @@ if(!$_SESSION["isAdmin"]){
                         echo "<p>".$row["year"]."r.</p>";
                         echo $row["admin_id"] != null ? "<p style='color: green;'>Zatwierdzony</p>" : "<p style='color: red'>Niezatwierdzony</p>";
                         echo "</a>";
+                    }
+                ?>
+
+                <h1>Filmy jeszcze nie zatwierdzone</h1>
+                <?php
+                    $con = new mysqli("localhost", "root", "", "movies");
+                    $sql = "SELECT `id`, `name`, `year`, `admin_id` FROM `movies` WHERE `admin_id` is null;";
+                    $res = $con->query($sql);
+                    if(mysqli_num_rows($res) > 0){
+                        while($row = $res->fetch_assoc()){
+                            echo "<a class='card' href='/strona/admin/movie-details.php?movieId=".$row["id"]."'>";
+                            echo "<p>".$row["name"]."</p>";
+                            echo "<p>".$row["year"]."r.</p>";
+                            echo $row["admin_id"] != null ? "<p style='color: green;'>Zatwierdzony</p>" : "<p style='color: red'>Niezatwierdzony</p>";
+                            echo "</a>";
+                        }
+                    }
+                    else{
+                        echo "<h1>Wszystkie filmy w serwisie są zaakceptowane!</h1>";
                     }
                 ?>
             </div>

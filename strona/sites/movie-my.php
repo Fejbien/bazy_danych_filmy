@@ -41,7 +41,7 @@
 
                 <h1>Wypożyczane</h1>
                 <?php
-                    $sql = "SELECT `id`, `name`, `year` FROM `movies` WHERE `user_id` = '".$_SESSION["id"]."';";// zmien
+                    $sql = "SELECT `id`, `name`, `year` FROM `movies` WHERE `renter_id` = '".$_SESSION["id"]."';";
                     $res = $con->query($sql);
                     if(mysqli_num_rows($res) > 0){
                         while($row = $res->fetch_assoc()){

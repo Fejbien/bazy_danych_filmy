@@ -26,10 +26,15 @@
                         $con->query($sql);
                     }
 
+                    if(isset($_POST["idToReturn"]) && !empty($_POST["idToReturn"])){
+                        $sql = "UPDATE `movies` SET `renter_id` = NULL WHERE `id`=".$_POST["idToReturn"].";";
+                        $con->query($sql);
+                    }
+
                     $sql = "SELECT m.user_id, m.id, m.name, m.year, m.length, g.genere, m.renter_id, u.login, a.login as 'admin', m.user_id as 'id' FROM movies as m JOIN generes as g ON g.id = m.genere_id JOIN users as u ON u.id = m.user_id LEFT JOIN users as a ON a.id = m.admin_id WHERE m.id = '".$_GET["movieId"]."';";
                     $res = $con->query($sql);
                     while($row = $res->fetch_assoc()){
-                        if($row["renter_id"] != NULL && $row["user_id"] != $_SESSION["id"]){
+                        if($row["renter_id"] != NULL && $row["user_id"] != $_SESSION["id"] && $row["renter_id"] != $_SESSION["id"]){
                             echo "<h1>Film aktualnie nie dostępny!<br>Wypożyczony</h1>";
                         }
                         else{
@@ -54,6 +59,13 @@
                                     echo "<form method='POST'>";
                                     echo "<input type='hidden' name='idToRent' value='".$_GET["movieId"]."'>";
                                     echo "<input type='submit' value='Wypożycz'>";
+                                    echo "</form>";
+                                }
+
+                                if($row["renter_id"] == $_SESSION["id"] && $row["admin"] != NULL){
+                                    echo "<form method='POST'>";
+                                    echo "<input type='hidden' name='idToReturn' value='".$_GET["movieId"]."'>";
+                                    echo "<input type='submit' value='Oddaj'>";
                                     echo "</form>";
                                 }
                             }

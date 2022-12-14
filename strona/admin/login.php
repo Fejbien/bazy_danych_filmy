@@ -26,7 +26,7 @@
         }
         ?>
         <div class="header">
-            <h3>Strona logowania</h3>
+            <h3>Strona logowania administratora</h3>
         </div>
 
         <div class="main">
@@ -39,12 +39,8 @@
                     <input type="submit" value="Zaloguj!">
                 </form>
                 <div style="display: flex; flex-direction: column; text-align: center; margin-top: 30px; font-weight: bolder; font-size: 20px;">
-                    <p style="margin-bottom: 10px;">Nie masz konta?</p>
-                    <a class='headerLink' href='/strona/sites/register.php'>Zarejestruj sie!</a>
-                </div>
-                <div style="display: flex; flex-direction: column; text-align: center; margin-top: 30px; font-size: 16px;">
-                    <p style="margin-bottom: 2px;">Konto admina?</p>
-                    <a class='headerLink' style='padding: 8px' href='/strona/sites/register.php'>Zaloguj jako admin</a>
+                    <p style="margin-bottom: 10px;">Nie masz konta admina?</p>
+                    <a class='headerLink' href='/strona/index.php'>Wróć!</a>
                 </div>
             </div>
         </div>
